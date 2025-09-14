@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tic Tac Toe — AI</title>
+    <link rel="stylesheet" href="tic-tac-toe.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Tic Tac Toe AI">
+        <div class="panel" id="leftPanel">
+            <h1 id="title">Tic Tac Toe — AI</h1>
+            <p class="lead" id="subtitle">Play vs another human or an AI. Select mode and difficulty, then have fun!</p>
+
+            <div style="display:flex; gap:16px; align-items:center; justify-content:center; margin-bottom:12px;">
+                <div style="text-align:center;">
+                    <div class="status" id="gameStatus">Ready</div>
+                    <div style="font-size:12px; color:var(--muted); margin-top:6px;">Current turn: <strong
+                            id="currentTurn">—</strong></div>
+                </div>
+            </div>
+
+            <div class="board" id="board" aria-live="polite" aria-label="tic tac toe board">
+                <!-- 9 cells injected by JS -->
+            </div>
+
+            <div style="display:flex; gap:10px; margin-top:12px; justify-content:center;">
+                <button id="btnRestart" class="btn">Restart</button>
+                <button id="btnUndo" class="btn ghost">Undo</button>
+            </div>
+
+            <footer class="small" style="text-align:center;">Tip: Try Hard difficulty to see an unbeatable AI.</footer>
+        </div>
+
+        <div class="panel" id="rightPanel">
+            <div class="controls">
+                <div class="row">
+                    <label for="modeSelect">Mode</label>
+                    <select id="modeSelect" title="Game mode">
+                        <option value="pve">Human vs AI</option>
+                        <option value="pvp">Human vs Human</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="symbolSelect">You are</label>
+                    <select id="symbolSelect">
+                        <option value="X">X (first)</option>
+                        <option value="O">O (second)</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="difficultySelect">Difficulty</label>
+                    <select id="difficultySelect">
+                        <option value="easy">Easy (random)</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard (perfect)</option>
+                    </select>
+                </div>
+
+                <div class="row" style="align-items:center;">
+                    <label>Start</label>
+                    <button id="btnStart" class="btn">Start Game</button>
+                </div>
+
+                <div style="height:8px;"></div>
+
+                <div>
+                    <h3 style="margin:0 0 8px 0; font-size:15px;">Move History</h3>
+                    <div class="history" id="history" aria-live="polite"></div>
+                </div>
+
+                <div style="height:6px;"></div>
+
+                <div style="display:flex; gap:8px; align-items:center;">
+                    <button id="btnFillRandom" class="btn ghost">Auto play random (demo)</button>
+                    <button id="btnClearHistory" class="btn ghost">Clear history</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="tic-tac-toe.js"></script>
+</body>
+
+</html>
